@@ -37,7 +37,7 @@ let estudiantes = [{
 }];
 
 
-app.get("/api/students", (req, res)=>{
+app.get("/api/students", (req, res, next)=>{
 	
 	StudentList.getAll()
 		.then(studentList =>{
@@ -50,7 +50,7 @@ app.get("/api/students", (req, res)=>{
 		});
 });
 
-app.post("/api/newStudent", jsonParser, (req, res)=>{
+app.post("/api/newStudent", jsonParser, (req, res, next)=>{
 	let nombre = req.body.nombre;
 	let apellido = req.body.apellido;
 	let matricula = req.body.matricula;
